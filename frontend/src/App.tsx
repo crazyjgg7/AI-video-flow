@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { EditorLayout } from './layouts/EditorLayout';
+import { useProjectStore } from './stores/projectStore';
+import { useEffect } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { project, createProject } = useProjectStore();
+
+  useEffect(() => {
+    if (!project) {
+      createProject('未命名项目');
+    }
+  }, [project, createProject]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <EditorLayout
+      assetLibrary={
+        <div className="assets-placeholder">
+          <span>📁</span>
+          <span>拖拽素材到此处</span>
+        </div>
+      }
+      preview={
+        <div className="preview-placeholder">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          <span>预览区域</span>
+          <span style={{ fontSize: '0.75rem', marginTop: '0.5rem' }}>
+            {project?.name ?? '加载中...'}
+          </span>
+        </div>
+      }
+      properties={
+        <div style={{ color: '#666', fontSize: '0.875rem' }}>
+          选择素材后显示属性
+        </div>
+      }
+      timeline={
+        <div className="timeline-placeholder">
+          ⏱️ 时间轴区域 - 在此处编辑视频片段
+        </div>
+      }
+    />
+  );
 }
 
-export default App
+export default App;
