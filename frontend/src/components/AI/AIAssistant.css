@@ -1,0 +1,89 @@
+.ai-assistant {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #0f3460;
+    margin-top: 1rem;
+}
+
+.ai-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e94560;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.ai-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ai-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background: #1a1a2e;
+    border: 1px solid #0f3460;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.875rem;
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.ai-form textarea:focus {
+    outline: none;
+    border-color: #e94560;
+}
+
+.btn-example {
+    background: transparent;
+    border: 1px dashed #0f3460;
+    color: #888;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.15s;
+}
+
+.btn-example:hover {
+    border-color: #e94560;
+    color: #e94560;
+}
+
+.ai-error {
+    padding: 0.5rem;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid #ef4444;
+    border-radius: 4px;
+    color: #ef4444;
+    font-size: 0.75rem;
+}
+
+.ai-tips {
+    padding: 0.75rem;
+    background: rgba(233, 69, 96, 0.1);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.ai-tips p {
+    margin: 0 0 0.5rem;
+    color: #e94560;
+}
+
+.ai-tips code {
+    display: block;
+    background: #1a1a2e;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    line-height: 1.5;
+}
