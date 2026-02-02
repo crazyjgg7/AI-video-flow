@@ -1,0 +1,27 @@
+# 后端服务
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv/
+venv/
+
+# 前端
+node_modules/
+dist/
+.vite/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 项目特定
+uploads/
+output/
+*.mp4
+*.webm
