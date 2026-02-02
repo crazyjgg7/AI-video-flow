@@ -1,0 +1,225 @@
+.timeline-container {
+    display: flex;
+    height: 100%;
+    background: #0f3460;
+}
+
+/* 轨道标签区 */
+.timeline-labels {
+    width: 150px;
+    flex-shrink: 0;
+    border-right: 1px solid #1a1a2e;
+}
+
+.timeline-label-header {
+    height: 30px;
+    border-bottom: 1px solid #1a1a2e;
+}
+
+.timeline-label {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0.75rem;
+    border-bottom: 1px solid #1a1a2e;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.track-icon {
+    font-size: 1rem;
+}
+
+.track-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 时间轴主体 */
+.timeline-main {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+}
+
+/* 刻度尺 */
+.timeline-ruler-container {
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid #1a1a2e;
+}
+
+.ruler {
+    position: relative;
+    height: 100%;
+    min-width: 3000px;
+}
+
+.ruler-tick {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.ruler-tick.major::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 12px;
+    background: #666;
+}
+
+.ruler-tick.minor::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 6px;
+    background: #444;
+}
+
+.ruler-label {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 10px;
+    color: #888;
+    white-space: nowrap;
+}
+
+/* 播放头 */
+.playhead {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e94560;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.playhead::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #e94560;
+}
+
+/* 轨道区域 */
+.timeline-tracks {
+    min-width: 3000px;
+}
+
+.track {
+    height: 50px;
+    position: relative;
+    border-bottom: 1px solid #1a1a2e;
+}
+
+.track-video {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.track-audio {
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.track-text {
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.track.locked {
+    opacity: 0.5;
+}
+
+.track-empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+    color: #444;
+}
+
+/* 片段 */
+.clip {
+    position: absolute;
+    top: 4px;
+    height: calc(100% - 8px);
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+    overflow: hidden;
+}
+
+.clip:hover {
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.clip.selected {
+    box-shadow: 0 0 0 2px #e94560;
+}
+
+.clip:focus {
+    outline: none;
+}
+
+.clip-content {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.clip-text {
+    color: #fff;
+}
+
+.clip-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 拖拽手柄 */
+.clip-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    cursor: ew-resize;
+    background: transparent;
+}
+
+.clip-handle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.clip-handle-left {
+    left: 0;
+}
+
+.clip-handle-right {
+    right: 0;
+}
+
+/* 加载状态 */
+.timeline-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #666;
+}

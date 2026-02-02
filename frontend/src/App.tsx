@@ -1,6 +1,7 @@
 import { EditorLayout } from './layouts/EditorLayout';
 import { useProjectStore } from './stores/projectStore';
 import { AssetLibrary } from './components/AssetLibrary/AssetLibrary';
+import { Timeline } from './components/Timeline/Timeline';
 import { useEffect } from 'react';
 import './App.css';
 
@@ -32,11 +33,7 @@ function App() {
           选择素材后显示属性
         </div>
       }
-      timeline={
-        <div className="timeline-placeholder">
-          ⏱️ 时间轴区域 - 在此处编辑视频片段
-        </div>
-      }
+      timeline={<Timeline />}
     />
   );
 }
