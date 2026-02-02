@@ -1,5 +1,6 @@
 import { EditorLayout } from './layouts/EditorLayout';
 import { useProjectStore } from './stores/projectStore';
+import { AssetLibrary } from './components/AssetLibrary/AssetLibrary';
 import { useEffect } from 'react';
 import './App.css';
 
@@ -14,12 +15,7 @@ function App() {
 
   return (
     <EditorLayout
-      assetLibrary={
-        <div className="assets-placeholder">
-          <span>📁</span>
-          <span>拖拽素材到此处</span>
-        </div>
-      }
+      assetLibrary={<AssetLibrary />}
       preview={
         <div className="preview-placeholder">
           <svg viewBox="0 0 24 24" fill="currentColor">
