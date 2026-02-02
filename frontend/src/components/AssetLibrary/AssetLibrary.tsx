@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from 'react';
-import { useAssetStore, Asset } from '../../stores/assetStore';
+import { useAssetStore } from '../../stores/assetStore';
 import { AssetItem } from './AssetItem';
 import './AssetLibrary.css';
 

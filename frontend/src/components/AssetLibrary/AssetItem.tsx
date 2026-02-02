@@ -1,4 +1,5 @@
-import { useAssetStore, Asset } from '../../stores/assetStore';
+import { useAssetStore } from '../../stores/assetStore';
+import type { Asset } from '../../stores/assetStore';
 import './AssetLibrary.css';
 
 interface AssetItemProps {
