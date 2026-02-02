@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from routers import render, assets, ai
+from routers import render, assets, ai, export
 
 app = FastAPI(
     title="AI Video Flow API",
@@ -13,6 +13,7 @@ app = FastAPI(
 app.include_router(render.router)
 app.include_router(assets.router)
 app.include_router(ai.router)
+app.include_router(export.router)
 
 # 静态文件服务（素材访问）
 uploads_dir = Path("uploads")

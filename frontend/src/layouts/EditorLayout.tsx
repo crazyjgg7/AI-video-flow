@@ -6,6 +6,7 @@ interface EditorLayoutProps {
     preview: ReactNode;
     properties: ReactNode;
     timeline: ReactNode;
+    headerAction?: ReactNode; // 顶部操作区 (导出按钮)
 }
 
 export function EditorLayout({
@@ -13,6 +14,7 @@ export function EditorLayout({
     preview,
     properties,
     timeline,
+    headerAction,
 }: EditorLayoutProps) {
     return (
         <div className="editor-layout">
@@ -20,16 +22,18 @@ export function EditorLayout({
             <header className="editor-header">
                 <h1 className="editor-title">AI Video Flow</h1>
                 <div className="editor-actions">
-                    <button className="btn btn-primary">导出</button>
+                    {headerAction}
                 </div>
             </header>
 
             {/* 主工作区 */}
             <main className="editor-main">
-                {/* 左侧素材库 */}
+                {/* 左侧素材库 + AI */}
                 <aside className="panel panel-assets">
-                    <div className="panel-header">素材库</div>
-                    <div className="panel-content">{assetLibrary}</div>
+                    <div className="panel-header">素材与 AI</div>
+                    <div className="panel-content">
+                        {assetLibrary}
+                    </div>
                 </aside>
 
                 {/* 中间预览区 */}
@@ -40,7 +44,7 @@ export function EditorLayout({
 
                 {/* 右侧参数面板 */}
                 <aside className="panel panel-properties">
-                    <div className="panel-header">参数</div>
+                    <div className="panel-header">属性与音频</div>
                     <div className="panel-content">{properties}</div>
                 </aside>
             </main>
