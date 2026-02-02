@@ -1,0 +1,123 @@
+.audio-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #0f3460;
+    margin-top: 1rem;
+}
+
+.audio-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.bgm-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.bgm-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #1a1a2e;
+    border-radius: 4px;
+}
+
+.bgm-icon {
+    font-size: 1.25rem;
+}
+
+.bgm-name {
+    flex: 1;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.btn-remove:hover {
+    color: #e94560;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.form-group input[type="range"] {
+    width: 100%;
+    accent-color: #e94560;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    background: #1a1a2e;
+    border: 1px solid #0f3460;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+.bgm-empty {
+    padding: 1rem;
+    text-align: center;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.audio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.audio-list p {
+    margin: 0 0 0.5rem;
+}
+
+.audio-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #1a1a2e;
+    border: 1px solid #0f3460;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s;
+}
+
+.audio-item:hover {
+    border-color: #e94560;
+    background: rgba(233, 69, 96, 0.1);
+}
+
+.empty-hint {
+    color: #444;
+    margin: 0;
+}
