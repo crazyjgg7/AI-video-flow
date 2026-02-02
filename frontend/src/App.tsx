@@ -3,6 +3,7 @@ import { useProjectStore } from './stores/projectStore';
 import { AssetLibrary } from './components/AssetLibrary/AssetLibrary';
 import { Timeline } from './components/Timeline/Timeline';
 import { Preview } from './components/Preview/Preview';
+import { SubtitleEditor } from './components/Subtitle/SubtitleEditor';
 import { useEffect } from 'react';
 import './App.css';
 
@@ -19,11 +20,7 @@ function App() {
     <EditorLayout
       assetLibrary={<AssetLibrary />}
       preview={<Preview />}
-      properties={
-        <div style={{ color: '#666', fontSize: '0.875rem' }}>
-          选择素材后显示属性
-        </div>
-      }
+      properties={<SubtitleEditor />}
       timeline={<Timeline />}
     />
   );
