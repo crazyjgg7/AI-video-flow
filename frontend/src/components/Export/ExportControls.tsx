@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTimelineStore } from '../../stores/timelineStore';
 import { useAudioStore } from '../../stores/audioStore';
-import { Asset } from '../../stores/assetStore'; // Import Type
+import type { Asset } from '../../stores/assetStore'; // Import Type
 import './ExportControls.css';
 
 const API_BASE = 'http://localhost:8000';
